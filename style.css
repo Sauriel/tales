@@ -1,0 +1,172 @@
+@font-face {
+	font-family: 'SourceSerifPro';
+	src: url('fonts/SourceSerifPro/SourceSerifPro-Regular.otf') format('opentype');
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	font-family: 'SourceSerifPro', serif;
+	font-size: 24px;
+	line-height: 1.35;
+	padding: 0rem 0em 0rem 0em;
+	margin: 0;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	max-width: 1000px;
+	min-width: 520px;
+	min-height: 100%;
+	text-rendering: optimizeLegibility;
+	-moz-font-feature-settings: 'kern=1';
+	-moz-font-feature-settings: 'kern' 1;
+	-webkit-font-feature-settings: 'kern' 1;
+	-o-font-feature-settings: 'kern' 1;
+	-ms-font-feature-settings: 'kern' 1;
+	font-feature-settings: 'kern' 1;
+	text-rendering: optimizeLegibility;
+	-moz-font-feature-settings: 'liga=1';
+	-moz-font-feature-settings: 'liga' 1;
+	-webkit-font-feature-settings: 'liga' 1;
+	-o-font-feature-settings: 'liga' 1;
+	-ms-font-feature-settings: 'liga' 1;
+	font-feature-settings: 'liga' 1;
+	position: relative;
+	z-index: -10000;
+}
+
+body > * {
+	font-size: 100%;
+	margin-left: 11.5rem;
+	margin-right: 2.5rem;
+}
+
+h1 {
+	font-weight: bold;
+	font-size: 1.2em;
+	margin: 0;
+}
+
+h2, h3, h4 {
+	font-weight: bold;
+	font-size: 1em;
+	margin: 0;
+}
+
+#content {
+	height: calc(100vh - 70px);
+	overflow: hidden;
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+
+#content>#text {
+	position: relative;
+	left: 0;
+}
+
+#menu {
+	display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+	display: -ms-flexbox;  /* TWEENER - IE 10 */
+	display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+	display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+	height: 70px;
+	position: fixed;
+	bottom: 0px;
+	left: 0;
+	right: 0;
+	text-align: center;
+	margin: 0;
+	border-top: 1px solid #CCC;
+}
+
+#menu>#previous, #menu>#chapters, #menu>#next {
+	-webkit-box-flex: 2;   /* OLD - iOS 6-, Safari 3.1-6 */
+	-webkit-flex: 2;       /* Safari 6.1+. iOS 7.1+, BB10 */
+	-ms-flex: 2;           /* IE 10 */
+	flex: 2;               /* NEW, Spec - Firefox, Chrome, Opera */
+	display: inline-block;
+	color: #CCC;
+}
+
+#menu>#chapters {
+	-webkit-box-flex: 3;   /* OLD - iOS 6-, Safari 3.1-6 */
+	-webkit-flex: 3;       /* Safari 6.1+. iOS 7.1+, BB10 */
+	-ms-flex: 3;           /* IE 10 */
+	flex: 3;               /* NEW, Spec - Firefox, Chrome, Opera */
+}
+
+#menu>#chapters>.flyout-wrapper {
+	position: absolute;
+	bottom: 69px;
+	left: 0;
+	right: 0;
+	display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+	display: -ms-flexbox;  /* TWEENER - IE 10 */
+	display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+	display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+	-webkit-justify-content: center;
+	-moz-justify-content:center;
+	-ms-justify-content: center;
+	justify-content: center;
+}
+
+#menu>#previous:hover, #menu>#chapters:hover, #menu>#next:hover {
+	background-color: #EEE;
+	color: #000;
+}
+
+#chapter-flyout {
+	display: -webkit-box;  /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+	display: -ms-flexbox;  /* TWEENER - IE 10 */
+	display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+	display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+	border: 1px solid #CCC;
+	border-bottom-width: 0;
+	background-color: #EEE;
+	color: #000;
+	text-align: left;
+	padding: 10px 10px 11px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+#chapter-flyout>div.left, #chapter-flyout>div.right {
+}
+
+#chapter-flyout>div.summary {
+	width: 400px;
+	border: 1px solid #CCC;
+	background: #FFF;
+	padding: 10px;
+	font-size: 0.75em;
+	border-radius: 4px;
+	margin-left: 20px;
+}
+
+#chapter-flyout>div.left>ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+#chapter-flyout>div.left>ul>li {
+	cursor: pointer;
+}
+
+#chapter-flyout>div.left>ul>li:hover {
+	background: #FFF;
+	-moz-transition-property: background;
+	-webkit-transition-property: background;
+	transition-property: background;
+	-moz-transition-duration: 0.2s;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	border-radius: 4px;
+}

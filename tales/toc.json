@@ -1,0 +1,22 @@
+﻿{
+	"initialTale": "initialTale.md",
+	"tales": [{
+			"order": 1,
+			"name": "Alice's Adventures In Wonderland",
+			"shortname": "alice",
+			"summary": "Author: Lewis Carroll, Language: English",
+			"file": "alice_wonderland.htm"
+		}, {
+			"order": 3,
+			"name": "The Prince",
+			"shortname": "prince",
+			"summary": "Author: Nicolo Machiavelli, Language: English",
+			"file": "machiavelli_prince.htm"
+		}, {
+			"order": 2,
+			"name": "The Adventures of Sherlock Holmes",
+			"shortname": "sherlock",
+			"summary": "Author: Arthur Conan Doyle, Language: English",
+			"file": "sherlock-homes.htm"
+		}]
+}
