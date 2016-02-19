@@ -3,7 +3,8 @@ var easing = 'swing';
 var animating = false;
 var menuSelector = '#chapter-flyout';
 var textSelector = '#text';
-var talesFolder = '/tales/';
+var defaultLocation = window.location.pathname;
+var talesFolder = defaultLocation + 'tales/';
 var defaultPageTitle = document.title;
 var talesMap = {};
 var talesSummaryMap = {};
@@ -83,7 +84,7 @@ function loadTale(tale, page) {
 	$(textSelector).attr('data-column-width', '');
 	$(textSelector).data('page', '');
 	$(textSelector).attr('data-page', '');
-	window.history.pushState({}, "RESET", window.location.pathname);
+	window.history.pushState({}, "RESET", defaultLocation);
 	
 	var taleName = talesMap[tale];
 	if (taleName != undefined) {
