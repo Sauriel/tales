@@ -83,7 +83,7 @@ function loadTale(tale, page) {
 	$(textSelector).attr('data-column-width', '');
 	$(textSelector).data('page', '');
 	$(textSelector).attr('data-page', '');
-	window.history.pushState({}, "RESET", '/');
+	window.history.pushState({}, "RESET", window.location.pathname);
 	
 	var taleName = talesMap[tale];
 	if (taleName != undefined) {
