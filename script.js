@@ -3,7 +3,7 @@ var easing = 'swing';
 var animating = false;
 var menuSelector = '#chapter-flyout';
 var textSelector = '#text';
-var talesFolder = 'tales/';
+var talesFolder = '/tales/';
 var defaultPageTitle = document.title;
 var talesMap = {};
 var talesSummaryMap = {};
@@ -21,6 +21,7 @@ function previous() {
 				$(textSelector).attr('data-page', page);
 				var taleName = window.location.search.substring(1).split('&')[0].split('=')[1];
 				window.history.pushState({}, "Page " + page + ", Tale: " + taleName, '?tale=' + taleName + '&page=' + page);
+				addPagination(page, $(textSelector).css('column-count'));
 				animating = false;
 			});
 		}
@@ -41,6 +42,7 @@ function next() {
 				$(textSelector).attr('data-page', page);
 				var taleName = window.location.search.substring(1).split('&')[0].split('=')[1];
 				window.history.pushState({}, "Page " + page + ", Tale: " + taleName, '?tale=' + taleName + '&page=' + page);
+				addPagination(page, $(textSelector).css('column-count'));
 				animating = false;
 			});
 		}
@@ -58,6 +60,11 @@ function showPage(page) {
 	}
 };
 
+function addPagination(pageNo, maxPageNo) {
+	$(menuSelector + '>div.chapter-info').remove();
+	$(menuSelector).append('<div class="chapter-info"><div class="page-info">Page ' + pageNo + ' of ' + maxPageNo + '</div></div>');
+};
+
 function formatTale(page) {
 	var contentHeight = $('#content').height();
 	var textHeight = $(textSelector).height() - 10;
@@ -71,6 +78,7 @@ function formatTale(page) {
 	$(textSelector).data('page', 1);
 	$(textSelector).attr('data-page', 1);
 	showPage(page);
+	addPagination(page, numberOfColumns);
 };
 
 function loadTale(tale, page) {
@@ -83,7 +91,7 @@ function loadTale(tale, page) {
 	$(textSelector).attr('data-column-width', '');
 	$(textSelector).data('page', '');
 	$(textSelector).attr('data-page', '');
-	window.history.pushState({}, "RESET", '/');
+	window.history.pushState({}, "RESET", window.location.pathname);
 	
 	var taleName = talesMap[tale];
 	if (taleName != undefined) {
